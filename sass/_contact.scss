@@ -1,0 +1,213 @@
+.contact {
+  background: url("./assets/Clip@1X.png") repeat
+    map-get($map: $colors, $key: "form-bcg");
+  background-position: bottom -150px left;
+  height: auto;
+  @media (min-width: 768px) {
+    height: 642px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1191px;
+    margin: 0 auto;
+    height: auto;
+    padding: $base-size;
+    padding: map-get($map: $spacings, $key: "m")
+      map-get($map: $spacings, $key: "s") map-get($map: $spacings, $key: "m")
+      map-get($map: $spacings, $key: "s");
+    @media (min-width: 768px) {
+      padding: map-get($map: $spacings, $key: "m");
+      height: 642px;
+    }
+    @media (min-width: 1191px) {
+      padding: map-get($map: $spacings, $key: "m")
+        map-get($map: $spacings, $key: "form-right")
+        map-get($map: $spacings, $key: "m")
+        map-get($map: $spacings, $key: "form-left");
+    }
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: map-get($map: $font-weight, $key: "semi-bold");
+    color: map-get($map: $colors, $key: "white");
+    font-size: map-get($map: $font-size, $key: "extra-large");
+    text-align: center;
+    margin-bottom: $base-size;
+    line-height: 1.2;
+  }
+  &__subtitle {
+    font-family: $font-secondary;
+    font-weight: map-get($map: $font-weight, $key: "normal");
+    color: map-get($map: $colors, $key: "white");
+    font-size: map-get($map: $font-size, $key: "medium");
+    text-align: center;
+    margin-bottom: map-get($map: $spacings, $key: "m");
+  }
+
+  &__form {
+    font-family: $font-secondary;
+    width: 100%;
+    display: grid;
+    column-gap: 16px;
+    row-gap: 18px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 124px 48px 52px;
+    grid-template-areas:
+      "name"
+      "phone"
+      "mail"
+      "company"
+      "employees"
+      "revenue"
+      "text"
+      "approvals"
+      "submit";
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 50px 50px 124px 48px 52px;
+      grid-template-areas:
+        "name phone mail"
+        "company employees revenue"
+        "text text text"
+        "approvals approvals approvals"
+        "submit submit submit";
+    }
+    & * {
+      border-radius: 5px;
+      font-size: map-get($map: $font-size, $key: "base-size");
+      color: map-get($map: $colors, $key: "light-text");
+    }
+  }
+
+  &__input,
+  &__select {
+    height: 50px;
+    border: 2px solid map-get($map: $colors, $key: "input-border");
+    padding-left: map-get($map: $spacings, $key: "input-left-padding");
+  }
+
+  &__input:nth-of-type(1) {
+    grid-area: name;
+  }
+  &__input:nth-of-type(2) {
+    grid-area: phone;
+  }
+  &__input:nth-of-type(3) {
+    grid-area: mail;
+  }
+  &__input:nth-of-type(4) {
+    grid-area: company;
+  }
+
+  &__select:nth-of-type(1) {
+    grid-area: employees;
+  }
+  &__select:nth-of-type(2) {
+    grid-area: revenue;
+  }
+  &__text {
+    grid-area: text;
+    padding: map-get($map: $spacings, $key: "input-left-padding");
+    border: 2px solid map-get($map: $colors, $key: "input-border");
+    height: 124px;
+    font-family: $font-secondary;
+  }
+
+  &__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("./assets/arrow1.png") 96% / 15% no-repeat #eee;
+    background-size: 4.5%;
+    @media (min-width: 576px) {
+      background-size: 3.5%;
+    }
+    @media (min-width: 768px) {
+      background-size: 4.5%;
+    }
+  }
+
+  &__checkbox {
+    grid-area: approvals;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    @media (min-width: 1191px) {
+      justify-content: center;
+    }
+    & label {
+      width: 90%;
+      margin-left: $base-size;
+      font-size: map-get($map: $font-size, $key: "small");
+      color: map-get($map: $colors, $key: "white");
+      @media (min-width: 768px) {
+        width: auto;
+      }
+
+      & span {
+        position: absolute;
+        left: auto;
+        width: 15px;
+        height: 15px;
+        border-radius: 25%;
+        background-color: #eee;
+        left: 0;
+        @media (min-width: 1191px) {
+          left: 22.5%;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 5px;
+          bottom: 3px;
+          width: 4px;
+          height: 12px;
+          border: solid map-get($map: $colors, $key: "light-blue");
+          border-width: 0 4px 4px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+      & input:checked ~ span:after {
+        display: block;
+      }
+
+      & input {
+        visibility: hidden;
+      }
+
+      & a {
+        color: map-get($map: $colors, $key: "light-blue");
+        font-size: map-get($map: $font-size, $key: "small");
+        cursor: pointer;
+      }
+    }
+  }
+  &__submit {
+    grid-area: submit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & input {
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      display: block;
+      width: 163px;
+      height: 52px;
+      font-size: map-get($map: $font-size, $key: "extra-small");
+      color: map-get($map: $colors, $key: "white");
+      background-color: map-get($map: $colors, $key: "light-blue");
+      &:hover {
+        background-color: map-get($map: $colors, $key: "white");
+        color: map-get($map: $colors, $key: "light-blue");
+      }
+    }
+  }
+}

@@ -1,0 +1,370 @@
+.links {
+  padding: map-get($map: $spacings, $key: "m")
+    map-get($map: $spacings, $key: "s");
+  overflow: hidden;
+  @media (min-width: 1191px) {
+    padding: map-get($map: $spacings, $key: "m")
+      map-get($map: $spacings, $key: "s") map-get($map: $spacings, $key: "m") *
+      3 map-get($map: $spacings, $key: "s");
+  }
+  &__container {
+    width: 100%;
+    max-width: 1191px;
+    margin: 0 auto;
+    height: auto;
+    @media (min-width: 1191px) {
+      height: 895px;
+    }
+  }
+  &__title {
+    font-family: $font-primary;
+    font-weight: map-get($map: $font-weight, $key: "semi-bold");
+    color: map-get($map: $colors, $key: "dark-text");
+    font-size: map-get($map: $font-size, $key: "extra-large");
+    text-align: center;
+    margin-bottom: map-get($map: $spacings, $key: "xxs2");
+    line-height: 1.2;
+  }
+  &__subtitle {
+    font-family: $font-secondary;
+    font-weight: map-get($map: $font-weight, $key: "normal");
+    color: map-get($map: $colors, $key: "light-text");
+    font-size: map-get($map: $font-size, $key: "base-size");
+    text-align: center;
+    margin-bottom: map-get($map: $spacings, $key: "xxs2");
+    line-height: 1.6;
+  }
+  &__menu {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @media (min-width: 768px) {
+      align-items: center;
+      margin-top: map-get($map: $spacings, $key: "l");
+      margin-bottom: map-get($map: $spacings, $key: "l");
+    }
+    @media (min-width: 1191px) {
+      margin: 0;
+      height: 743px;
+      align-items: center;
+    }
+  }
+  &__elipse {
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 596px;
+    max-height: 596px;
+    background-color: map-get($map: $colors, $key: "elipse");
+    border-radius: 50%;
+    border: 2px solid map-get($map: $colors, $key: "circle-thin");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: map-get($map: $spacings, $key: "m");
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+  &__sprocket {
+    background: url("./assets/sprocket1.png");
+    background-size: contain;
+    width: 80%;
+    aspect-ratio: 1/1;
+    max-width: 469px;
+    max-height: 469px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: sprocket 20s infinite linear;
+    @media (min-width: 768px) {
+      animation: none;
+    }
+    & p {
+      color: map-get($map: $colors, $key: "white");
+      font-size: map-get($map: $font-size, $key: "fluid-mobile");
+      font-family: $font-secondary;
+      @media (min-width: 768px) {
+        font-size: map-get($map: $font-size, $key: "fluid");
+        display: block;
+      }
+      @media (min-width: 1191px) {
+        font-size: map-get($map: $font-size, $key: "small");
+      }
+    }
+  }
+  &__globe {
+    background: url("./assets/globe2.png");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -55%);
+    z-index: 2;
+    background-size: contain;
+    background-size: 110%;
+    width: 80%;
+    aspect-ratio: 1/1;
+    max-width: 469px;
+    max-height: 469px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+    & p {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-40%, -55%);
+      color: map-get($map: $colors, $key: "white");
+      font-size: map-get($map: $font-size, $key: "fluid-mobile");
+      font-family: $font-secondary;
+      z-index: 3;
+      @media (min-width: 768px) {
+        font-size: map-get($map: $font-size, $key: "fluid");
+        display: block;
+      }
+      @media (min-width: 1191px) {
+        font-size: map-get($map: $font-size, $key: "small");
+      }
+    }
+  }
+
+  &__item {
+    width: 14%;
+    aspect-ratio: 1/1;
+    max-width: 80px;
+    max-height: 80px;
+    position: absolute;
+    z-index: 2;
+    background-color: map-get($map: $colors, $key: "elipse");
+    border-radius: 50%;
+    border: 3px solid map-get($map: $colors, $key: "circle-thin");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    transition: 0.3s;
+    cursor: pointer;
+    color: map-get($map: $colors, $key: "dark-text");
+    &::after {
+      position: absolute;
+      width: 100px;
+      font-size: map-get($map: $font-size, $key: "small");
+      display: none;
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
+      @media (min-width: 1191px) {
+        width: 300px;
+        font-size: map-get($map: $font-size, $key: "base-size");
+      }
+    }
+    &:hover {
+      transform: scale(1.1);
+      background-color: map-get($map: $colors, $key: "white");
+      border-color: map-get($map: $colors, $key: "light-blue");
+    }
+    &[data-index="1"] {
+      right: 0;
+      transform: translateX(50%);
+      &::after {
+        content: "Prawo międzynarodowe";
+        left: 120%;
+      }
+      &:hover {
+        transform: translateX(50%) scale(1.1);
+      }
+    }
+    &[data-index="2"] {
+      right: 0;
+      top: 70%;
+      &::after {
+        content: "Finansowanie handlu międzynarodowego";
+        left: 120%;
+      }
+    }
+    &[data-index="3"] {
+      right: 17.5%;
+      bottom: 0;
+      &::after {
+        content: "Pozyskiwanie inwestorów (M&A)";
+        left: 120%;
+      }
+    }
+    &[data-index="4"] {
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      &::after {
+        content: "Nieruchomości";
+        text-align: center;
+        top: 120%;
+      }
+      &:hover {
+        transform: translate(-50%, 50%) scale(1.1);
+      }
+    }
+    &[data-index="5"] {
+      left: 20%;
+      bottom: 0;
+      &::after {
+        content: "Komercjalizacja własności intelektualnej";
+        text-align: right;
+        right: 120%;
+      }
+    }
+    &[data-index="6"] {
+      top: 70%;
+      left: 0;
+      &::after {
+        content: "Podnoszenie produktywności";
+        text-align: right;
+        right: 120%;
+      }
+    }
+    &[data-index="7"] {
+      left: 0;
+      transform: translateX(-50%);
+      &::after {
+        content: "Crowdfunding";
+        text-align: right;
+        right: 120%;
+      }
+      &:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+    }
+    &[data-index="8"] {
+      left: 0;
+      bottom: 70%;
+      &::after {
+        content: "Ubezpieczenia międzynarodowe";
+        text-align: right;
+        right: 120%;
+      }
+    }
+    &[data-index="9"] {
+      left: 20%;
+      top: 0;
+      &::after {
+        content: "Marketing 360º";
+        text-align: right;
+        right: 120%;
+      }
+    }
+    &[data-index="10"] {
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      &::after {
+        content: "Zarządzanie projektami";
+        text-align: center;
+        bottom: 120%;
+      }
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+    &[data-index="11"] {
+      right: 17.5%;
+      top: 0;
+      &::after {
+        content: "Dotacje i granty międzynarodowe";
+        left: 120%;
+      }
+    }
+    &[data-index="12"] {
+      right: 0;
+      bottom: 70%;
+      &::after {
+        content: "Międzynarodowa księgowość i podatki";
+        left: 120%;
+      }
+    }
+
+    & img {
+      max-width: 80%;
+      height: auto;
+    }
+  }
+  &__mobileLinksContainer {
+    background: url("./assets/shape.png");
+    background-repeat: no-repeat;
+    background-position: -1000px -100px;
+    background-size: 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -(map-get($map: $spacings, $key: "s"));
+    margin-top: map-get($map: $spacings, $key: "xl");
+    @media (min-width: 768px) {
+      display: none;
+    }
+    & p.links__mobileLinksTitle {
+      width: 100%;
+      text-align: center;
+      background-color: map-get($map: $colors, $key: "dark-blue");
+      padding: 10% 5%;
+      font-family: $font-secondary;
+      font-size: map-get($map: $font-size, $key: "medium");
+      text-transform: uppercase;
+      color: map-get($map: $colors, $key: "white");
+      box-shadow: 0px 10px 15px 0px map-get($map: $colors, $key: "dark-blue");
+    }
+    & a {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 100%;
+      font-size: map-get($map: $font-size, $key: "small");
+      position: relative;
+      text-decoration: none;
+      font-family: $font-secondary;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 5%;
+      padding-left: map-get($map: $spacings, $key: "s");
+      box-shadow: 0px 10px 15px 0px map-get($map: $colors, $key: "dark-blue");
+      transition: 0.3s;
+      cursor: pointer;
+      color: map-get($map: $colors, $key: "dark-text");
+      &:nth-last-child(1) {
+        box-shadow: none;
+      }
+      & div {
+        background-color: map-get($map: $colors, $key: "elipse");
+        border-radius: 50%;
+        border: 3px solid map-get($map: $colors, $key: "circle-thin");
+        width: 25%;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2%;
+
+        & img {
+          width: 60%;
+        }
+      }
+      & p {
+        width: 50%;
+        margin-left: $base-size;
+      }
+    }
+  }
+}
+
+@keyframes sprocket {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
