@@ -1,0 +1,600 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Roboto&display=swap");
+.container {
+  max-width: 1191px;
+}
+
+.links {
+  padding: 48px 40px;
+  overflow: hidden;
+}
+@media (min-width: 1191px) {
+  .links {
+    padding: 48px 40px 144px 40px;
+  }
+}
+.links__container {
+  width: 100%;
+  max-width: 1191px;
+  margin: 0 auto;
+  height: auto;
+}
+@media (min-width: 1191px) {
+  .links__container {
+    height: 895px;
+  }
+}
+.links__title {
+  font-family: "Hind", sans-serif;
+  font-weight: 600;
+  color: #474747;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+.links__subtitle {
+  font-family: "Roboto", sans-serif;
+  color: #565e66;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.links__menu {
+  position: relative;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .links__menu {
+    align-items: center;
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+}
+@media (min-width: 1191px) {
+  .links__menu {
+    margin: 0;
+    height: 743px;
+    align-items: center;
+  }
+}
+.links__elipse {
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 596px;
+  max-height: 596px;
+  background-color: #f4f7f9;
+  border-radius: 50%;
+  border: 2px solid #d4dbe0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 48px;
+}
+@media (min-width: 768px) {
+  .links__elipse {
+    width: 50%;
+  }
+}
+.links__sprocket {
+  background: url("./assets/sprocket1.png");
+  background-size: contain;
+  width: 80%;
+  aspect-ratio: 1/1;
+  max-width: 469px;
+  max-height: 469px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: sprocket 20s infinite linear;
+}
+@media (min-width: 768px) {
+  .links__sprocket {
+    animation: none;
+  }
+}
+.links__sprocket p {
+  color: #ffffff;
+  font-size: 2vw;
+  font-family: "Roboto", sans-serif;
+}
+@media (min-width: 768px) {
+  .links__sprocket p {
+    font-size: 1.3vw;
+    display: block;
+  }
+}
+@media (min-width: 1191px) {
+  .links__sprocket p {
+    font-size: 14px;
+  }
+}
+.links__globe {
+  background: url("./assets/globe2.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-55%, -55%);
+  z-index: 2;
+  background-size: contain;
+  background-size: 110%;
+  width: 80%;
+  aspect-ratio: 1/1;
+  max-width: 469px;
+  max-height: 469px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .links__globe {
+    display: none;
+  }
+}
+.links__globe p {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-40%, -55%);
+  color: #ffffff;
+  font-size: 2vw;
+  font-family: "Roboto", sans-serif;
+  z-index: 3;
+}
+@media (min-width: 768px) {
+  .links__globe p {
+    font-size: 1.3vw;
+    display: block;
+  }
+}
+@media (min-width: 1191px) {
+  .links__globe p {
+    font-size: 14px;
+  }
+}
+.links__item {
+  width: 14%;
+  aspect-ratio: 1/1;
+  max-width: 80px;
+  max-height: 80px;
+  position: absolute;
+  z-index: 2;
+  background-color: #f4f7f9;
+  border-radius: 50%;
+  border: 3px solid #d4dbe0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #474747;
+}
+.links__item::after {
+  position: absolute;
+  width: 100px;
+  font-size: 14px;
+  display: none;
+}
+@media (min-width: 768px) {
+  .links__item::after {
+    display: inline-block;
+  }
+}
+@media (min-width: 1191px) {
+  .links__item::after {
+    width: 300px;
+    font-size: 16px;
+  }
+}
+.links__item:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+  border-color: #35a8df;
+}
+.links__item[data-index="1"] {
+  right: 0;
+  transform: translateX(50%);
+}
+.links__item[data-index="1"]::after {
+  content: "Prawo międzynarodowe";
+  left: 120%;
+}
+.links__item[data-index="1"]:hover {
+  transform: translateX(50%) scale(1.1);
+}
+.links__item[data-index="2"] {
+  right: 0;
+  top: 70%;
+}
+.links__item[data-index="2"]::after {
+  content: "Finansowanie handlu międzynarodowego";
+  left: 120%;
+}
+.links__item[data-index="3"] {
+  right: 17.5%;
+  bottom: 0;
+}
+.links__item[data-index="3"]::after {
+  content: "Pozyskiwanie inwestorów (M&A)";
+  left: 120%;
+}
+.links__item[data-index="4"] {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+.links__item[data-index="4"]::after {
+  content: "Nieruchomości";
+  text-align: center;
+  top: 120%;
+}
+.links__item[data-index="4"]:hover {
+  transform: translate(-50%, 50%) scale(1.1);
+}
+.links__item[data-index="5"] {
+  left: 20%;
+  bottom: 0;
+}
+.links__item[data-index="5"]::after {
+  content: "Komercjalizacja własności intelektualnej";
+  text-align: right;
+  right: 120%;
+}
+.links__item[data-index="6"] {
+  top: 70%;
+  left: 0;
+}
+.links__item[data-index="6"]::after {
+  content: "Podnoszenie produktywności";
+  text-align: right;
+  right: 120%;
+}
+.links__item[data-index="7"] {
+  left: 0;
+  transform: translateX(-50%);
+}
+.links__item[data-index="7"]::after {
+  content: "Crowdfunding";
+  text-align: right;
+  right: 120%;
+}
+.links__item[data-index="7"]:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+.links__item[data-index="8"] {
+  left: 0;
+  bottom: 70%;
+}
+.links__item[data-index="8"]::after {
+  content: "Ubezpieczenia międzynarodowe";
+  text-align: right;
+  right: 120%;
+}
+.links__item[data-index="9"] {
+  left: 20%;
+  top: 0;
+}
+.links__item[data-index="9"]::after {
+  content: "Marketing 360º";
+  text-align: right;
+  right: 120%;
+}
+.links__item[data-index="10"] {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+.links__item[data-index="10"]::after {
+  content: "Zarządzanie projektami";
+  text-align: center;
+  bottom: 120%;
+}
+.links__item[data-index="10"]:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.links__item[data-index="11"] {
+  right: 17.5%;
+  top: 0;
+}
+.links__item[data-index="11"]::after {
+  content: "Dotacje i granty międzynarodowe";
+  left: 120%;
+}
+.links__item[data-index="12"] {
+  right: 0;
+  bottom: 70%;
+}
+.links__item[data-index="12"]::after {
+  content: "Międzynarodowa księgowość i podatki";
+  left: 120%;
+}
+.links__item img {
+  max-width: 80%;
+  height: auto;
+}
+.links__mobileLinksContainer {
+  background: url("./assets/shape.png");
+  background-repeat: no-repeat;
+  background-position: -1000px -100px;
+  background-size: 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -40px;
+  margin-top: 96px;
+}
+@media (min-width: 768px) {
+  .links__mobileLinksContainer {
+    display: none;
+  }
+}
+.links__mobileLinksContainer p.links__mobileLinksTitle {
+  width: 100%;
+  text-align: center;
+  background-color: #274291;
+  padding: 10% 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  box-shadow: 0px 10px 15px 0px #274291;
+}
+.links__mobileLinksContainer a {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  font-size: 14px;
+  position: relative;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5%;
+  padding-left: 40px;
+  box-shadow: 0px 10px 15px 0px #274291;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #474747;
+}
+.links__mobileLinksContainer a:nth-last-child(1) {
+  box-shadow: none;
+}
+.links__mobileLinksContainer a div {
+  background-color: #f4f7f9;
+  border-radius: 50%;
+  border: 3px solid #d4dbe0;
+  width: 25%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.links__mobileLinksContainer a div img {
+  width: 60%;
+}
+.links__mobileLinksContainer a p {
+  width: 50%;
+  margin-left: 16px;
+}
+
+@keyframes sprocket {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.contact {
+  background: url("./assets/Clip@1X.png") repeat #274291;
+  background-position: bottom -150px left;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .contact {
+    height: 642px;
+  }
+}
+.contact__container {
+  width: 100%;
+  max-width: 1191px;
+  margin: 0 auto;
+  height: auto;
+  padding: 16px;
+  padding: 48px 40px 48px 40px;
+}
+@media (min-width: 768px) {
+  .contact__container {
+    padding: 48px;
+    height: 642px;
+  }
+}
+@media (min-width: 1191px) {
+  .contact__container {
+    padding: 48px 145px 48px 115px;
+  }
+}
+.contact__title {
+  font-family: "Hind", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.contact__subtitle {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.contact__form {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  display: grid;
+  column-gap: 16px;
+  row-gap: 18px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 50px 50px 50px 50px 50px 124px 48px 52px;
+  grid-template-areas: "name" "phone" "mail" "company" "employees" "revenue" "text" "approvals" "submit";
+}
+@media (min-width: 768px) {
+  .contact__form {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 124px 48px 52px;
+    grid-template-areas: "name phone mail" "company employees revenue" "text text text" "approvals approvals approvals" "submit submit submit";
+  }
+}
+.contact__form * {
+  border-radius: 5px;
+  font-size: 16px;
+  color: #565e66;
+}
+.contact__input,
+.contact__select {
+  height: 50px;
+  border: 2px solid #dbdbdb;
+  padding-left: 13px;
+}
+.contact__input:nth-of-type(1) {
+  grid-area: name;
+}
+.contact__input:nth-of-type(2) {
+  grid-area: phone;
+}
+.contact__input:nth-of-type(3) {
+  grid-area: mail;
+}
+.contact__input:nth-of-type(4) {
+  grid-area: company;
+}
+.contact__select:nth-of-type(1) {
+  grid-area: employees;
+}
+.contact__select:nth-of-type(2) {
+  grid-area: revenue;
+}
+.contact__text {
+  grid-area: text;
+  padding: 13px;
+  border: 2px solid #dbdbdb;
+  height: 124px;
+  font-family: "Roboto", sans-serif;
+}
+.contact__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("./assets/arrow1.png") 96%/15% no-repeat #eee;
+  background-size: 4.5%;
+}
+@media (min-width: 576px) {
+  .contact__select {
+    background-size: 3.5%;
+  }
+}
+@media (min-width: 768px) {
+  .contact__select {
+    background-size: 4.5%;
+  }
+}
+.contact__checkbox {
+  grid-area: approvals;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 1191px) {
+  .contact__checkbox {
+    justify-content: center;
+  }
+}
+.contact__checkbox label {
+  width: 90%;
+  margin-left: 16px;
+  font-size: 14px;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .contact__checkbox label {
+    width: auto;
+  }
+}
+.contact__checkbox label span {
+  position: absolute;
+  left: auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 25%;
+  background-color: #eee;
+  left: 0;
+}
+@media (min-width: 1191px) {
+  .contact__checkbox label span {
+    left: 22.5%;
+  }
+}
+.contact__checkbox label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  bottom: 3px;
+  width: 4px;
+  height: 12px;
+  border: solid #35a8df;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.contact__checkbox label input:checked ~ span:after {
+  display: block;
+}
+.contact__checkbox label input {
+  visibility: hidden;
+}
+.contact__checkbox label a {
+  color: #35a8df;
+  font-size: 14px;
+  cursor: pointer;
+}
+.contact__submit {
+  grid-area: submit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__submit input {
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  width: 163px;
+  height: 52px;
+  color: #ffffff;
+  background-color: #35a8df;
+}
+.contact__submit input:hover {
+  background-color: #ffffff;
+  color: #35a8df;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
